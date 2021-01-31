@@ -1,0 +1,59 @@
+
+
+
+<div class="add_emp"><h2 class=""><span class="">Add/Edit Employee</span></h2></div>
+
+<div class="row add_employee_div">
+    <br/>
+
+    <div class="col-md-6">
+    
+    <form #form="ngForm" ngNativeValidate (submit)="onSubmit(form)">
+        <div class="form-row">
+                <input type="hidden" class="form-control" id="inputId"name="Id"[(ngModel)]="service.formData.Id">
+    
+            <div class="form-group col-md-6">
+              <label for="inputEmail4">First Name</label>
+              <input type="text" class="form-control" id="inputname"name="FirstName" placeholder="First Name"[(ngModel)]="service.formData.FirstName"required>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="inputEmail4">Last Name</label>
+                <input type="text" class="form-control" id="inputname"name="LastName" placeholder="Last Name"[(ngModel)]="service.formData.LastName"required>
+              </div>
+            <div class="form-group col-md-12">
+              <label for="inputPassword4"> Email</label>
+    
+              <input type="text" class="form-control" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" id="inputname"name="Email" placeholder="Email"[(ngModel)]="service.formData.Email" #emailref="ngModel" [class.success]="!emailref.invalid" autocomplete="off" required>
+              <div *ngIf="emailref.errors &&(emailref.touched || emailref.dirty)" class ="text-error">
+                Invalid email
+             </div>
+            </div>
+          </div>
+          <div class="form-row">
+    
+          <div class="form-group col-md-4">
+            <label for="inputPassword4"> Street</label>
+            <input type="text" class="form-control"name="Street" id="inputname" placeholder="Street"[(ngModel)]="service.formData.Street"required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPassword4"> City</label>
+            <input type="text" class="form-control"name="City" id="inputname" placeholder="City"[(ngModel)]="service.formData.City"required>
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputPassword4"> Country</label>
+            <input type="text" class="form-control"name="Country" id="inputname" placeholder="Country"[(ngModel)]="service.formData.Country"required>
+          </div>
+    </div>
+    <div class="form-group col-md-9 phone_input">
+        <label for="inputPassword4"> Phone</label>
+
+        <input type="text" class="form-control" id="inputname"name="Phone" (keypress)="keyPress($event)" minlength=10 maxlength=10  placeholder="Phone"[(ngModel)]="service.formData.Phone" autocomplete="off"  required>
+  
+      </div>
+    <button type="submit"  class="btn btn-primary">Submit</button>
+    
+    </form>
+    </div>
+    
+    </div>
+    

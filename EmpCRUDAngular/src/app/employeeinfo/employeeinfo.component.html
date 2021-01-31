@@ -1,0 +1,56 @@
+
+    
+    <br/>
+    <br/>
+    <div>
+        <div class="emp_header">
+            <a routerLink="/addemployee"><button class="btn btn-success pull-right add_customer" > Add Employee</button></a>
+            <button class="emp_selected_delete btn btn-danger" (click)="deleteEmpSelected()"> Delete </button>
+            <h2 class=""><span class="manage_emp">Manage Employees</span></h2>
+
+           
+        </div>
+
+       
+        <div class=" table--no-card m-b-40">
+          
+            <div class="au-card-inner">
+                <div class="table-responsive">
+                    <table class="table table-borderless table-striped table-earning">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" (click)="CheckAllOptions()"></th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Address</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+    
+    
+    
+                            </tr>
+                        </thead>
+                        <tbody>
+        <tr *ngFor="let e of employee | paginate: { itemsPerPage: 5, currentPage: p }">
+        <td><input type="checkbox" [(ngModel)]="e.selected" [value]="e.Id"></td>
+        <td >{{e.Name}}</td>  
+        <td >{{e.Email}}</td>  
+    
+        <td >{{e.Address}}</td> 
+        <td >{{e.PhoneFormat}}</td> 
+
+        <td><button (click)="onDelete(e.Id)" class="btn btn-sm btn-outline-danger dltbtn">X</button>
+            <button (click)="populateForm(e)" class="btn btn-sm btn-success editbtn">Edit</button>
+        </td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <ul class="pagination">  
+                    <pagination-controls (pageChange)="p = $event"></pagination-controls>  
+                    </ul>
+            </div>
+        </div>
+    </div>

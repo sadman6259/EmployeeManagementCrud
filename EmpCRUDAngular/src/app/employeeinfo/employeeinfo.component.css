@@ -1,0 +1,31 @@
+.h2{
+ margin-left: 100 px;  
+}
+.h2, h2 {
+    height: 80px;
+}
+.manage_emp{
+    margin-left: 30px;
+    margin-top:15px;
+    color: white;
+
+}
+.emp_header{
+    background-color: darkcyan;
+    
+}
+.add_customer{
+    float: right;
+    margin-top: 15px;
+    margin-right: 10px;
+
+}
+.emp_selected_delete{
+    float:right;
+    margin-right: 10px;
+    margin-top: 15px;
+
+}
+.dltbtn{
+    margin-right: 5px;
+}

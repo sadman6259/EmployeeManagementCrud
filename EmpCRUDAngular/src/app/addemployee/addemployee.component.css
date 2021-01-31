@@ -1,0 +1,17 @@
+.add_employee_div{
+    margin-left: 50px;
+}
+.phone_input{
+    margin-right: 60px;
+}
+.h2, h2 {
+    margin-bottom: 30px;
+    margin-left: 25px;
+
+}
+.success{
+    border: 1px solid greenyellow;
+    }
+    .text-error{
+        color: red;
+    }
